@@ -21,54 +21,58 @@ function getArrayParams(...arr) {
 
 function summElementsWorker(...arr) {
   let sum = 0;
-  if (arr.length !== 0) {
-    sum = arr.reduce(function (previousValue, currentValue) {
-      return previousValue + currentValue;
-    });
+  if (arr.length === 0) {
+    return 0;
   }
+  sum = arr.reduce(function (previousValue, currentValue) {
+    return previousValue + currentValue;
+  });
   return sum;
 }
 
 function differenceMaxMinWorker(...arr) {
   let difference = 0;
-  if (arr.length !== 0) {
-    const max = Math.max(...arr);
-    const min = Math.min(...arr);
-    difference = max - min;
+  if (arr.length === 0) {
+    return 0;
   }
+  const max = Math.max(...arr);
+  const min = Math.min(...arr);
+  difference = max - min;
   return difference;
 }
 
 function differenceEvenOddWorker(...arr) {
   let difference = 0;
-  if (arr.length !== 0) {
-    let sumEvenElement = 0;
-    let sumOddElement = 0;
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] % 2 === 0) {
-        sumEvenElement += arr[i];
-      } else {
-        sumOddElement += arr[i];
-      }
-      difference = sumEvenElement - sumOddElement;
+  if (arr.length === 0) {
+    return 0;
+  }
+  let sumEvenElement = 0;
+  let sumOddElement = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      sumEvenElement += arr[i];
+    } else {
+      sumOddElement += arr[i];
     }
+    difference = sumEvenElement - sumOddElement;
   }
   return difference;
 }
 
 function averageEvenElementsWorker(...arr) {
   let average = 0;
-  if (arr.length !== 0) {
-    let sumEvenElement = 0;
-    let countEvenElement = 0;
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] % 2 === 0) {
-        sumEvenElement += arr[i];
-        countEvenElement += 1;
-      }
-    }
-    average = sumEvenElement / countEvenElement;
+  if (arr.length === 0) {
+    return 0;
   }
+  let sumEvenElement = 0;
+  let countEvenElement = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      sumEvenElement += arr[i];
+      countEvenElement += 1;
+    }
+  }
+  average = sumEvenElement / countEvenElement;
   return average;
 }
 
