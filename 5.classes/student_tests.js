@@ -1,8 +1,8 @@
 describe('Домашнее задание к лекции 5 «Классы». Дополнительное задание', () => {
   describe('Задача №3', () => {
     let student;
-  
-    beforeEach(function(){
+
+    beforeEach(function () {
       student = new Student("Иван Петров");
     });
 
@@ -14,22 +14,22 @@ describe('Домашнее задание к лекции 5 «Классы». Д
 
     it('добавление оценок по разным предметам', () => {
       student.addMark(3, "математика");
-      expect(student.marks).toEqual({"математика": [3]});
+      expect(student.marks).toEqual({ "математика": [3] });
       student.addMark(5, "математика");
-      expect(student.marks).toEqual({"математика": [3, 5]});
+      expect(student.marks).toEqual({ "математика": [3, 5] });
       student.addMark(5, "физика");
-      expect(student.marks).toEqual({"математика": [3, 5], "физика": [5]});
+      expect(student.marks).toEqual({ "математика": [3, 5], "физика": [5] });
     });
 
     it('невозможность добавления некорректных оценок', () => {
       student.addMark(0, "математика");
       expect(student.marks).toEqual({});
       student.addMark(3, "математика");
-      expect(student.marks).toEqual({"математика": [3]});
+      expect(student.marks).toEqual({ "математика": [3] });
       student.addMark(10, "математика");
-      expect(student.marks).toEqual({"математика": [3]});
+      expect(student.marks).toEqual({ "математика": [3] });
       student.addMark(7, "физика");
-      expect(student.marks).toEqual({"математика": [3]});
+      expect(student.marks).toEqual({ "математика": [3] });
     });
 
     it('подсчёт средней оценки по предмету', () => {
